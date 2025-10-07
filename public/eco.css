@@ -1,96 +1,123 @@
-/* ===== Core / tokens ===== */
-:root{
-  --bg: #f4f7f9;
-  --text:#0f172a;
-  --muted:#475569;
-  --primary:#0ea5a5;
-  --primary-700:#0c8b8b;
-  --teal-900:#0e7490;
-  --teal-800:#0f9fb1;
-  --teal-700:#0ea5a5;
-  --ring:#99f6e4;
-  --card:#ffffff;
-  --border:#e2e8f0;
-  --shadow: 0 12px 32px -12px rgba(15, 118, 110, .25);
-}
-
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-  background: var(--bg);
-  color: var(--text);
+/* ====== Reset saudável ====== */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  color: #0f172a; /* slate-900 */
+  background: #f8fafc; /* slate-50 */
   line-height: 1.65;
 }
 
-.container{max-width:1180px;margin:0 auto;padding:20px}
-a{color:var(--primary);text-decoration:none}
-a:hover{color:var(--primary-700)}
-
-/* ===== Top bar + breadcrumbs ===== */
-.topbar{background:#0f766e;color:#c7f9f4;font-size:14px}
-.topbar-inner{max-width:1180px;margin:0 auto;padding:8px 20px;display:flex;gap:16px;align-items:center}
-.breadcrumb{display:flex;gap:8px;align-items:center;color:#c7f9f4;flex-wrap:wrap}
-.breadcrumb a{color:#e6fffb}
-
-/* ===== Hero ===== */
-.hero{
-  margin-top:8px;
-  background: linear-gradient(180deg, #0ea5a5 0%, #0e8790 60%, #0e7490 100%);
-  color:white;border-radius:18px;padding:28px 24px;box-shadow:var(--shadow);
-}
-.hero h1{
-  margin:6px 0 14px;font-size: clamp(32px, 6vw, 54px);
-  line-height:1.1;font-weight:900;letter-spacing:-.02em;
-}
-.hero .lead{opacity:.95;font-size:18px;margin:0 0 12px}
-.hero .intro{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:12px 14px}
-.cta{
-  display:inline-block;background:white;color:#065f5b;border:2px solid white;
-  padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:0 10px 22px -10px rgba(255,255,255,.6);
-  margin-top:14px
-}
-.cta:hover{transform:translateY(-1px);background:#d1fae5;border-color:#d1fae5}
-
-/* ===== Grid main/aside ===== */
-.grid{display:grid;grid-template-columns:1fr 360px;gap:24px;margin:24px 0}
-@media (max-width: 980px){.grid{grid-template-columns:1fr}}
-
-.card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:18px 16px;box-shadow:var(--shadow);margin:16px 0;
-}
-.card h2{margin:0 0 10px;font-size: clamp(22px, 3.5vw, 30px);line-height:1.25}
-
-/* ===== Aside form ===== */
-.form{
-  background:#ffffff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)
-}
-.form .form-header{
-  background: linear-gradient(180deg,#0ea5a5 0%, #0f9fb1 60%, #0e7490 100%);
-  color:white;padding:14px 16px;font-weight:800;border-bottom:1px solid rgba(255,255,255,.25)
-}
-.form .form-body{padding:16px}
-.input{
-  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;
-  margin:8px 0;background:#f8fafc
-}
-.btn{
-  width:100%;padding:12px 14px;border:none;border-radius:10px;background:#0ea5a5;color:white;
-  font-weight:800;cursor:pointer;box-shadow:0 10px 22px -12px rgba(14,165,233,.35)
-}
-.btn:hover{background:#0c8b8b}
-
-/* ===== Alert / feature boxes (se necessário) ===== */
-.alert{
-  background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:14px;margin:16px 0;color:#7c2d12
+/* ====== Helpers ====== */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-/* ===== FAQ ===== */
-.faq-item{
-  background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin:10px 0;
+/* ====== Hero (igual ao da página de Padarias) ====== */
+header {
+  background: linear-gradient(180deg, #0ea5b7 0%, #036b7e 100%); /* teal-500 -> teal-800 */
+  color: #fff;
+  border-radius: 16px;
+  padding: 26px 24px 28px;
+  box-shadow: 0 8px 24px rgba(2, 44, 53, 0.18);
+  margin-bottom: 24px;
 }
-.faq-item strong{display:block;margin-bottom:6px;color:#0f172a}
+header .lead {
+  font-size: 18px;
+  opacity: .95;
+  margin: 0 0 16px 0;
+}
+header h1 {
+  font-weight: 800;
+  font-size: clamp(28px, 4.8vw, 52px);
+  line-height: 1.1;
+  margin: 6px 0 14px 0;
+  letter-spacing: -0.02em;
+}
+header .intro-box {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
 
-/* ===== Footer ===== */
-footer{margin:28px 0 8px;text-align:center;color:var(--muted);font-size:14px}
+/* ====== Botão CTA ====== */
+a.cta, .cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid #0b1324;
+  background: #ffffff;
+  color: #0b1324;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 0 #0b1324, 0 12px 24px rgba(2, 6, 23, .12);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+}
+a.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 #0b1324, 0 16px 28px rgba(2, 6, 23, .16);
+  background: #f8fafc;
+}
+
+/* ====== Cards (seções) ====== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;           /* gray-200 */
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin: 18px 0;
+  box-shadow: 0 2px 0 rgba(2, 6, 23, .04), 0 10px 30px rgba(2, 6, 23, .06);
+}
+.card h2 {
+  font-size: clamp(20px, 2.8vw, 30px);
+  margin: 4px 0 10px 0;
+  letter-spacing: -0.01em;
+}
+.card p { margin: 10px 0; }
+
+/* Delimitador sutil entre cards longos (como no template) */
+.card + .card {
+  border-top: 6px solid #e6f6f8;       /* faixa teal clarinha */
+}
+
+/* ====== Listas ====== */
+ul, ol { padding-left: 22px; }
+li { margin: 6px 0; }
+
+/* ====== FAQ ====== */
+.faq-item { margin: 10px 0; }
+.faq-item strong { display:block; margin: 0 0 4px 0; }
+
+/* ====== Seção CTA secundária ====== */
+.section-cta {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin: 18px 0;
+  box-shadow: 0 2px 0 rgba(2, 6, 23, .04), 0 10px 30px rgba(2, 6, 23, .06);
+}
+.section-cta h2 {
+  font-size: clamp(18px, 2.6vw, 26px);
+  margin: 2px 0 8px 0;
+}
+
+/* ====== Rodapé ====== */
+footer {
+  margin: 40px 0 10px;
+  opacity: .7;
+  font-size: 14px;
+}
+
+/* ====== Responsivo ====== */
+@media (min-width: 768px) {
+  .wrap { padding: 32px; }
+  header { padding: 30px 28px 32px; }
+  .card { padding: 22px 20px; }
+}
