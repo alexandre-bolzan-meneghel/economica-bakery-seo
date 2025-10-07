@@ -1,42 +1,123 @@
-#root {
-  max-width: 1280px;
+/* ======= Base / Reset leve ======= */
+:root{
+  --bg: #f7fafc;
+  --text:#0f172a;
+  --muted:#475569;
+  --primary:#0ea5a5;         /* teal */
+  --primary-700:#0c8b8b;
+  --ring:#99f6e4;            /* teal-100 */
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --shadow: 0 10px 30px -10px rgba(2, 132, 199, .15);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ======= Layout ======= */
+.wrap{
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 28px 24px 56px;
+}
+
+/* ======= Hero / Header ======= */
+header{
+  background: linear-gradient(135deg, #0ea5a5 0%, #0891b2 50%, #0e7490 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+header .lead{
+  margin: 0 0 8px 0;
+  opacity: .95;
+  font-size: 18px;
+}
+header h1{
+  margin: 10px 0 14px;
+  font-size: clamp(28px, 5.6vw, 46px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+header > div{ /* intro */
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 14px;
+  backdrop-filter: blur(2px);
+}
+
+/* ======= Cards ======= */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin: 18px 0;
+  box-shadow: var(--shadow);
+}
+.card h2{
+  margin: 0 0 10px;
+  font-size: clamp(20px, 3.4vw, 28px);
+  line-height: 1.25;
+}
+
+/* ======= Tipografia ======= */
+p{margin: 10px 0}
+strong{font-weight: 700}
+ul{padding-left: 22px;margin: 8px 0}
+li{margin: 6px 0}
+
+/* ======= CTA ======= */
+.cta{
+  display: inline-block;
+  background: white;
+  color: var(--primary);
+  border: 2px solid white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .15s ease;
+  box-shadow: 0 8px 20px -8px rgba(255,255,255,.6);
+}
+.cta:hover{
+  transform: translateY(-1px);
+  background: var(--ring);
+  color: #064e3b;
+}
+
+/* ======= FAQ ======= */
+.faq-item{
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 10px 0;
+}
+.faq-item strong{
+  display:block;
+  margin-bottom:6px;
+  color: #0f172a;
+}
+
+/* ======= Footer ======= */
+footer{
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--muted);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* ======= Links ======= */
+a{color: #0ea5a5}
+a:hover{color:#0c8b8b}
